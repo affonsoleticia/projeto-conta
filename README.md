@@ -40,23 +40,35 @@ Método: (+) correcao  (soma no saldo);
 Regra de negócio: Comparar se a data informada pelo usuario é a mesma data do dia do aniversário, se for corrigir o valor em 0,05%  saldo = (saldo * 0.05)+saldo;
 
 *ContaCorrente:*
+
 inteiro: contadorTalao;
+
 Método: (+) pediTalao  - [não é no saldo]
+
 Regra de negócio: Solicitar ao final dos 10 movimentos ou ao pedido de sair se o mesmo deseja solicitar cheque, limitando em apenas 3 cheques. cada talão debita a conta em R$ 30.00;
 
 *Conta Especial:*
+
 real: limite;
+
 Método: ((+) usarLimite (soma no saldo e tira do limite);
+
 Regra de negócio: Usar o limite do saldo se no momento do movimento o saldo fica negativo, ajusta no saldo e diminuir no limite.Limite de R$ 1.000;
 
 *Conta Empresarial:*
+
 real: emprestimoEmpresa;
+
 Método: (+) pedirEmprestimo (soma no saldo e tira do empresitmo);
+
 Regra de negócio: Solicitar a qualquer tempo ou após os 10 movimentos o uso do emprestimo (limitado a R$ 10.000) levando o valor para o saldo;
 
 *Conta Estudantil:*
+
 real: limiteEstudantil;
+
 Método: (+) usarEstudantil (soma no saldo - tira do estudantil);
+
 Regra de negócio: Solicitar a qualquer tempo ou após os 10 movimentos o uso do emprestimo estudantil (limitado a R$ 5.000) levando o valor para o saldo;
 
 ***REGRAS GERAIS:***
